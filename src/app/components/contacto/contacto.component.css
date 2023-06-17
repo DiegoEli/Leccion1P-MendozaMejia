@@ -1,0 +1,28 @@
+.cv-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;    
+}
+
+.cv-image{
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+h2 {
+  color: #333;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.cv-container{
+  padding-bottom: 5em;
+}

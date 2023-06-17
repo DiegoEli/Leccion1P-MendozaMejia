@@ -1,0 +1,82 @@
+<form [formGroup]="form" (ngSubmit)="agregarPersona()" class="container mt-5">
+    <div class="container mt-5">
+        <div class="row">
+
+            <h2> Ingrese sus datos: </h2><br>
+            <div class="input-group">
+                <input type="text" formControlName="cedula" class="form-control form-control-lg" id="cedula"
+                    placeholder=" Cédula">
+
+                <input type="text" formControlName="nombre" class="form-control form-control-lg" id="nombre"
+                    placeholder=" Nombres">
+
+                <input type="text" formControlName="apellido" class="form-control form-control-lg" id="apellido"
+                    placeholder=" Apellidos">
+
+                <input type="text" formControlName="fechaNacimiento" class="form-control form-control-lg"
+                    id="fechaNacimiento" placeholder=" fecha de Nacimiento">
+
+                <input type="text" formControlName="nacionalidad" class="form-control form-control-lg" id="nacionalidad"
+                    placeholder=" Nacionalidad">
+
+                <button class="btn btn-success" type="submit">Agregar</button>
+            </div><br>
+
+            <div class="contenedor_creados" style="margin-top: 3%;">
+                <h4>Listado de personas registradas: </h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"> #</th>
+                            <th scope="col"> Cédula</th>
+                            <th scope="col"> Nombre</th>
+                            <th scope="col"> Apellido</th>
+                            <th scope="col"> Fecha de Nacimiento</th>
+                            <th scope="col"> Nacionalidad</th>
+                            <th scope="col"> Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let persona of listaPersonas let i=index">
+                            <th>{{ i + 1 }}</th>
+                            <th>{{persona.cedula}}</th>
+                            <th>{{persona.nombre}}</th>
+                            <th>{{persona.apellido}}</th>
+                            <th>{{persona.fechaNacimiento}}</th>
+                            <th>{{persona.nacionalidad}}</th>
+                            <button class="btn btn-danger" (click)="eliminarPersona(i, persona)">Eliminar</button>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="contenedor_creados" style="margin-top: 3%;">
+                <h4>Listado de personas eliminadas: </h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"> #</th>
+                            <th scope="col"> Cédula</th>
+                            <th scope="col"> Nombre</th>
+                            <th scope="col"> Apellido</th>
+                            <th scope="col"> Fecha de Nacimiento</th>
+                            <th scope="col"> Nacionalidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let persona of listapersonasEliminadas let i=index">
+                            <th>{{ i + 1 }}</th>
+                            <th>{{persona.cedula}}</th>
+                            <th>{{persona.nombre}}</th>
+                            <th>{{persona.apellido}}</th>
+                            <th>{{persona.fechaNacimiento}}</th>
+                            <th>{{persona.nacionalidad}}</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</form>
